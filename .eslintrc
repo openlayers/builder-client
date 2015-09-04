@@ -1,0 +1,10 @@
+{
+  "ecmaFeatures": {
+    "jsx": true
+  },
+  "extends": "openlayers",
+  "parser": "babel-eslint",
+  "plugins": [
+    "react"
+  ]
+}
