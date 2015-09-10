@@ -2,12 +2,16 @@ import React from 'react';
 import {connect} from 'react-redux';
 import Define from './define';
 import Group from './group';
-import {setExports} from '../actions';
+import {expandItem, setExports} from '../actions';
 
 const Builder = React.createClass({
 
   onExport: function(values) {
     this.props.dispatch(setExports(values));
+  },
+
+  onToggleExpand: function(name, expanded) {
+    this.props.dispatch(expandItem(name, expanded));
   },
 
   renderGroups: function(groups) {
@@ -19,6 +23,7 @@ const Builder = React.createClass({
           expand={this.props.expand}
           exports={this.props.exports}
           onExport={this.onExport}
+          onToggleExpand={this.onToggleExpand}
           key={group.name}
           {...group}/>
     ));

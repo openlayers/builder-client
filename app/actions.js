@@ -57,6 +57,7 @@ export function setDefine(name, value) {
 export function expandItem(name, expanded) {
   return {
     type: EXPAND_ITEM,
+    name: name,
     expanded: expanded
   };
 }

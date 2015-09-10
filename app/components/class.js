@@ -36,6 +36,10 @@ const Class = React.createClass({
     this.props.onExport(values);
   },
 
+  onToggleClick: function(event) {
+    this.props.onToggleExpand(this.props.symbol.name, this.props.collapsed);
+  },
+
   renderMethods: function(methods) {
     if (this.props.collapsed) {
       return null;
@@ -51,18 +55,22 @@ const Class = React.createClass({
 
   render: function() {
     const state = getExportedState(this.props.symbol, this.props.exports);
-    // TODO: support partially checked
     const checked = state !== states.NONE_EXPORTED;
+    const toggle = this.props.collapsed ? '+' : '-';
     return (
       <div>
         <div>
-          <label>
+          <label style={{cursor: 'pointer'}}>
             <input
                 checked={checked}
                 onChange={this.onCheckboxChange}
                 type="checkbox"/>
             <code>{this.props.symbol.name}</code>
           </label>
+          &nbsp;&nbsp;
+          <span onClick={this.onToggleClick} style={{cursor: 'pointer'}}>
+            {toggle}
+          </span>
         </div>
         {this.renderMethods(this.props.symbol.methods)}
       </div>

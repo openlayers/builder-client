@@ -15,7 +15,8 @@ const Method = React.createClass({
   render: function() {
     return (
       <div>
-        <label>
+        &nbsp;&nbsp;
+        <label style={{cursor: 'pointer'}}>
           <input
               checked={this.props.exported}
               onChange={this.onCheckboxChange}

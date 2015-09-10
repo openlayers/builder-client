@@ -10,6 +10,7 @@ const Group = React.createClass({
           collapsed={!this.props.expand[symbol.name]}
           exports={this.props.exports}
           onExport={this.props.onExport}
+          onToggleExpand={this.props.onToggleExpand}
           key={symbol.name}
           symbol={symbol}/>
     ));

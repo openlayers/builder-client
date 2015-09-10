@@ -11,7 +11,7 @@ const Func = React.createClass({
   render: function() {
     return (
       <div>
-        <label>
+        <label style={{cursor: 'pointer'}}>
           <input
               checked={this.props.exported}
               onChange={this.onCheckboxChange}
