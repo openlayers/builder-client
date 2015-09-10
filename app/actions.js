@@ -1,7 +1,7 @@
 import fetch from 'isomorphic-fetch';
-import group from './group';
+import group from './grouper';
 
-const BUILDER_URL = 'http://localhost:3000'
+const BUILDER_URL = 'http://localhost:4000'
 
 export const REQUEST_INFO = 'REQUEST_INFO';
 export const RECEIVE_INFO = 'RECEIVE_INFO';
@@ -14,7 +14,7 @@ export function requestInfo(version) {
     dispatch({type: REQUEST_INFO});
     fetch(BUILDER_URL + '/releases/' + version)
         .then(response => response.json())
-        .then(json => dispatch(receiveInfo(json.info)));
+        .then(json => dispatch(receiveInfo(json)));
   };
 }
 

@@ -1,15 +1,8 @@
-import 'babel-core/polyfill';
 import React from 'react';
-import {Provider} from 'react-redux';
 
-import App from './containers/app';
-import configureStore from './store/configure-store';
-
-const store = configureStore();
+import App from './app/index';
 
 React.render(
-  <Provider store={store}>
-    {() => <App/>}
-  </Provider>,
+  <App version="3.8.2"/>,
   document.getElementById('root')
 );

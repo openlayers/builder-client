@@ -2,7 +2,7 @@
   "name": "openlayers-custom",
   "version": "0.0.0",
   "description": "Client for the OpenLayers build service",
-  "main": "index.js",
+  "main": "app/index.js",
   "license": "MIT",
   "scripts": {
     "start": "node server.js",

@@ -1,10 +1,22 @@
 
 const defs = [{
   name: 'Core',
-  match: /(ol.Coordinate)|(ol.Map)|(ol.View)/
+  match: /(ol.Map\b)|(ol.View\b)|(ol.Object\b)|(ol.Observable\b)/
 }, {
   name: 'Layers and Sources',
-  match: /(ol.layer)|(ol.source)/
+  match: /(ol.layer\b)|(ol.source\b)/
+}, {
+  name: 'Controls and Interactions',
+  match: /(ol.control\b)|(ol.interaction\b)/
+}, {
+  name: 'Formats',
+  match: /(ol.format\b)/
+}, {
+  name: 'Geometry, Feature, and Style',
+  match: /(ol.geom\b)|(ol.Feature\b)|(ol.style\b)/
+}, {
+  name: 'Projections and Extents',
+  match: /(ol.proj\b)|(ol.extent\b)/
 }, {
   name: 'Misc.',
   match: /.*/
@@ -53,6 +65,7 @@ export default function(symbols) {
           group.functions.push(symbol);
         }
       }
+      break;
     }
   });
 

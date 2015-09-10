@@ -4,15 +4,14 @@ var config = require('./webpack.config');
 
 new WebpackDevServer(webpack(config), {
   publicPath: config.output.publicPath,
-  hot: true,
   historyApiFallback: true,
   stats: {
     colors: true
   }
-}).listen(3000, 'localhost', function (err) {
+}).listen(3000, 'localhost', function(err) {
   if (err) {
-    console.log(err);
+    process.stderr.write(err.message + '\n');
   }
 
-  console.log('Listening at http://localhost:3000/');
+  process.stdout.write('Listening at http://localhost:3000/\n');
 });
