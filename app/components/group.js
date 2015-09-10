@@ -16,7 +16,13 @@ const Group = React.createClass({
   },
 
   renderFunctions: function(functions) {
-    return functions.map(symbol => <Func key={symbol.name} symbol={symbol}/>);
+    return functions.map(symbol => (
+      <Func
+          exported={this.props.exports[symbol.name]}
+          key={symbol.name}
+          onExport={this.props.onExport}
+          symbol={symbol}/>
+    ));
   },
 
   render: function() {

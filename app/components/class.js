@@ -44,6 +44,7 @@ const Class = React.createClass({
       <Method
           exported={!!this.props.exports[method.name]}
           key={method.name}
+          onExport={this.props.onExport}
           symbol={method}/>
     ));
   },
