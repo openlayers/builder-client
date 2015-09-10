@@ -4,7 +4,11 @@ const Func = React.createClass({
 
   render: function() {
     return (
-      <div><code>{this.props.symbol.name}</code></div>
+      <div>
+        <label>
+          <input type="checkbox"/><code>{this.props.symbol.name}</code>
+        </label>
+      </div>
     );
   }
 

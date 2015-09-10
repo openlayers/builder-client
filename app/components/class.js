@@ -1,21 +1,68 @@
 import React from 'react';
 import Method from './method';
 
+const states = {
+  NONE_EXPORTED: 'NONE_EXPORTED',
+  SOME_EXPORTED: 'SOME_EXPORTED',
+  ALL_EXPORTED: 'ALL_EXPORTED'
+};
+
+function getExportedState(symbol, exports) {
+  const total = symbol.methods.length + 1;
+  let count = exports[symbol.name] ? 1 : 0;
+  for (let i = 0, ii = total - 1; i < ii; ++i) {
+    if (exports[symbol.methods[i].name]) {
+      ++count;
+    }
+  }
+  if (count === 0) {
+    return states.NONE_EXPORTED;
+  } else if (count === total) {
+    return states.ALL_EXPORTED;
+  } else {
+    return states.SOME_EXPORTED;
+  }
+}
+
 const Class = React.createClass({
+
+  onCheckboxChange: function(event) {
+    var exported = event.target.checked;
+    var values = {};
+    this.props.symbol.methods.forEach(method => {
+      values[method.name] = exported;
+    });
+    values[this.props.symbol.name] = exported;
+    this.props.onExport(values);
+  },
 
   renderMethods: function(methods) {
     if (this.props.collapsed) {
       return null;
     }
     return methods.map(method => (
-      <Method key={method.name} symbol={method}/>
+      <Method
+          exported={!!this.props.exports[method.name]}
+          key={method.name}
+          symbol={method}/>
     ));
   },
 
   render: function() {
+    const state = getExportedState(this.props.symbol, this.props.exports);
+    // TODO: support partially checked
+    const checked = state !== states.NONE_EXPORTED;
     return (
       <div>
-        <div><code>{this.props.symbol.name}</code></div>
+        <div>
+          <label>
+            <input
+                checked={checked}
+                onChange={this.onCheckboxChange}
+                type="checkbox"/>
+            <code>{this.props.symbol.name}</code>
+          </label>
+        </div>
         {this.renderMethods(this.props.symbol.methods)}
       </div>
     );

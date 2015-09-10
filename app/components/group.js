@@ -8,6 +8,8 @@ const Group = React.createClass({
     return classes.map(symbol => (
       <Class
           collapsed={!this.props.expand[symbol.name]}
+          exports={this.props.exports}
+          onExport={this.props.onExport}
           key={symbol.name}
           symbol={symbol}/>
     ));

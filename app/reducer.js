@@ -1,7 +1,7 @@
 import {combineReducers} from 'redux';
 
 import {
-  REQUEST_INFO, RECEIVE_INFO, SET_EXPORT, SET_DEFINE, EXPAND_ITEM
+  REQUEST_INFO, RECEIVE_INFO, SET_EXPORTS, SET_DEFINE, EXPAND_ITEM
 } from './actions';
 
 function info(state = {}, action) {
@@ -17,10 +17,15 @@ function info(state = {}, action) {
 
 function exports(state = {}, action) {
   switch (action.type) {
-  case SET_EXPORT:
-    return Object.assign({}, state, {
-      [action.name]: action.value
-    });
+  case SET_EXPORTS:
+    var values = Object.assign({}, state, action.values);
+    for (let name in values) {
+      if (!values[name]) {
+        // prune unexported symbols
+        delete values[name];
+      }
+    }
+    return values;
   default:
     return state;
   }

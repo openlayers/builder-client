@@ -8,7 +8,11 @@ const Method = React.createClass({
 
   render: function() {
     return (
-      <div><code>{displayName(this.props.symbol.name)}</code></div>
+      <div>
+        <label>
+          <input type="checkbox"/><code>{displayName(this.props.symbol.name)}</code>
+        </label>
+      </div>
     );
   }
 

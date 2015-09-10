@@ -5,7 +5,7 @@ const BUILDER_URL = 'http://localhost:4000'
 
 export const REQUEST_INFO = 'REQUEST_INFO';
 export const RECEIVE_INFO = 'RECEIVE_INFO';
-export const SET_EXPORT = 'SET_EXPORT';
+export const SET_EXPORTS = 'SET_EXPORTS';
 export const SET_DEFINE = 'SET_DEFINE';
 export const EXPAND_ITEM = 'EXPAND_ITEM';
 
@@ -39,11 +39,10 @@ export function receiveInfo(info) {
   };
 }
 
-export function setExport(name, value) {
+export function setExports(values) {
   return {
-    type: SET_EXPORT,
-    name: name,
-    value: value
+    type: SET_EXPORTS,
+    values: values
   };
 }
 

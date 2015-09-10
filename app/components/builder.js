@@ -2,15 +2,25 @@ import React from 'react';
 import {connect} from 'react-redux';
 import Define from './define';
 import Group from './group';
+import {setExports} from '../actions';
 
 const Builder = React.createClass({
+
+  onExport: function(values) {
+    this.props.dispatch(setExports(values));
+  },
 
   renderGroups: function(groups) {
     if (!groups) {
       return null;
     }
     return groups.map(group => (
-      <Group expand={this.props.expand} key={group.name} {...group}/>
+      <Group
+          expand={this.props.expand}
+          exports={this.props.exports}
+          onExport={this.onExport}
+          key={group.name}
+          {...group}/>
     ));
   },
 
