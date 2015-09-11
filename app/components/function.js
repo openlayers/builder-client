@@ -16,7 +16,7 @@ const Func = React.createClass({
               checked={this.props.exported}
               onChange={this.onCheckboxChange}
               type="checkbox"/>
-          <code>{this.props.symbol.name}</code>
+          <code>{this.props.symbol.name}()</code>
         </label>
       </div>
     );
