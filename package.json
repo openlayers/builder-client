@@ -1,5 +1,5 @@
 {
-  "name": "openlayers-custom",
+  "name": "openlayers-builder-client",
   "version": "0.0.0",
   "description": "Client for the OpenLayers build service",
   "main": "app/index.js",
@@ -10,12 +10,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/openlayers/custom.git"
+    "url": "https://github.com/openlayers/builder-client.git"
   },
   "bugs": {
-    "url": "https://github.com/openlayers/custom/issues"
+    "url": "https://github.com/openlayers/builder-client/issues"
   },
-  "homepage": "http://github.com/openlayers/custom",
+  "homepage": "http://github.com/openlayers/builder-client",
   "dependencies": {
     "isomorphic-fetch": "^2.1.1",
     "react": "^0.13.3",
