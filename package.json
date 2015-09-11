@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "start": "node server.js",
-    "test": "eslint server.js src"
+    "test": "eslint server.js lib"
   },
   "repository": {
     "type": "git",
