@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import Define from './define';
 import Group from './group';
-import {expandItem, setExports} from '../actions';
+import {expandItem, setDefine, setExports} from '../actions';
 
 const Builder = React.createClass({
 
@@ -12,6 +12,10 @@ const Builder = React.createClass({
 
   onToggleExpand: function(name, expanded) {
     this.props.dispatch(expandItem(name, expanded));
+  },
+
+  onDefine: function(name, value) {
+    this.props.dispatch(setDefine(name, value));
   },
 
   renderGroups: function(groups) {
@@ -36,7 +40,19 @@ const Builder = React.createClass({
     return (
       <section>
         <h4>Flags</h4>
-        {defines.map(define => <Define key={define.name} symbol={define}/>)}
+        {defines.map(define => {
+          let value = define.default;
+          if (define.name in this.props.defines) {
+            value = this.props.defines[define.name];
+          }
+          return (
+            <Define
+                key={define.name}
+                onDefine={this.onDefine}
+                symbol={define}
+                value={value}/>
+          );
+        })}
       </section>
     );
   },
