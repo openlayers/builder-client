@@ -2,6 +2,8 @@
 
 This is a client for the OpenLayers [build service](https://github.com/openlayers/builder).
 
+When functional, I'll add instructions.  For now, this is a place for notes.
+
 ```
 Info:
 
