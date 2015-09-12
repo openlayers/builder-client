@@ -53,8 +53,10 @@ State:
 
 {
   info: Info,
-  exports: {symbolName -> boolean},
-  defines: {defineName -> boolean},
+  build: {
+    symbols: {symbolName -> boolean},
+    defines: {defineName -> boolean}
+  },
   expand: {name -> boolean}
 }
 ```
