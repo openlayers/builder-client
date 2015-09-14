@@ -9,18 +9,3 @@ body {
   bottom: 0px;
   width: 100%;
 }
-
-.builder.header {
-  position: fixed;
-  width: 95%;
-  height: 25px;
-  background: white;
-}
-
-.builder.button {
-  float: right;
-}
-
-.builder.content {
-  padding-top: 25px;
-}
