@@ -4,6 +4,10 @@ body {
   margin: 20px;
 }
 
+span.version {
+  font-size: 18px;
+  color: #666;
+}
 #root {
   position: absolute;
   top: 70px;
