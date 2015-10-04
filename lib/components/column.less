@@ -1,11 +1,24 @@
 .builder-column {
 
+  &:not(.builder-column-empty) {
+    border-right: 1px solid #ddd;
+  }
+
   .builder-column-item {
     cursor: pointer;
-    padding: 3px 10px 3px 0;
+    padding: 3px 10px;
+
+    &:hover {
+      background-color: #f5f5f5;
+    }
 
     &.builder-column-item-selected {
       background-color: #DEF4F7;
+    }
+
+    &.builder-column-item-expandable:after {
+      float: right;
+      content: '\25b8';
     }
 
     input[type="checkbox"] {
