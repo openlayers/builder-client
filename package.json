@@ -23,7 +23,7 @@
     "openlayers-builder-util": "^0.4.0",
     "react": "^0.14.1",
     "react-dom": "^0.14.1",
-    "react-redux": "^4.0.0",
+    "react-redux": "^4.0.4",
     "react-select": "^0.9.1",
     "redux": "^3.0.2",
     "redux-thunk": "^1.0.0"
