@@ -35,14 +35,43 @@
     "babel-preset-es2015": "^6.0.15",
     "babel-preset-react": "^6.0.15",
     "css-loader": "^0.23.0",
-    "eslint": "^1.6.0",
-    "eslint-config-openlayers": "^1.0.0",
-    "eslint-plugin-react": "^3.5.1",
+    "eslint": "^2.3.0",
+    "eslint-config-openlayers": "^4.1.0",
+    "eslint-plugin-react": "^4.2.1",
     "less": "^2.5.3",
     "less-loader": "^2.2.1",
     "node-libs-browser": "^1.0.0",
     "style-loader": "^0.13.0",
     "webpack": "^1.12.2",
     "webpack-dev-server": "^1.12.0"
+  },
+  "eslintConfig": {
+    "extends": "openlayers",
+    "plugins": [
+      "react"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    },
+    "rules": {
+      "react/jsx-boolean-value": 2,
+      "react/jsx-no-undef": 2,
+      "react/jsx-sort-props": 2,
+      "react/jsx-uses-react": 2,
+      "react/jsx-uses-vars": 2,
+      "react/no-did-mount-set-state": 2,
+      "react/no-did-update-set-state": 2,
+      "react/no-multi-comp": 2,
+      "react/no-unknown-property": 2,
+      "react/prop-types": 2,
+      "react/react-in-jsx-scope": 2,
+      "react/self-closing-comp": 2,
+      "react/sort-prop-types": 2,
+      "react/wrap-multilines": 2
+    }
   }
 }
