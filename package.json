@@ -40,7 +40,7 @@
     "eslint-plugin-react": "^3.5.1",
     "less": "^2.5.3",
     "less-loader": "^2.2.1",
-    "node-libs-browser": "^0.5.2",
+    "node-libs-browser": "^1.0.0",
     "style-loader": "^0.13.0",
     "webpack": "^1.12.2",
     "webpack-dev-server": "^1.12.0"
