@@ -29,7 +29,7 @@
     "redux-thunk": "^2.0.1"
   },
   "devDependencies": {
-    "babel-core": "^6.0.15",
+    "babel-core": "^6.8.0",
     "babel-eslint": "^5.0.0",
     "babel-loader": "^6.0.0",
     "babel-preset-es2015": "^6.0.15",
