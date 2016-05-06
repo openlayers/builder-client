@@ -6,7 +6,9 @@
   "license": "MIT",
   "scripts": {
     "start": "node server.js",
-    "test": "eslint server.js lib"
+    "test": "eslint server.js lib",
+    "build": "webpack --config webpack.production.js index.js",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -38,6 +40,7 @@
     "eslint": "^2.3.0",
     "eslint-config-openlayers": "^4.1.0",
     "eslint-plugin-react": "^4.2.1",
+    "inline-environment-variables-webpack-plugin": "0.0.2",
     "less": "^2.5.3",
     "less-loader": "^2.2.1",
     "node-libs-browser": "^1.0.0",
