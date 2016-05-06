@@ -22,7 +22,7 @@
     "isomorphic-fetch": "^2.1.1",
     "openlayers-builder-util": "^0.4.0",
     "react": "^0.14.1",
-    "react-dom": "^0.14.1",
+    "react-dom": "^15.0.2",
     "react-redux": "^4.0.0",
     "react-select": "^0.9.1",
     "redux": "^3.0.2",
